@@ -7,10 +7,36 @@ import {
   BulbOutlined,
   FunctionOutlined,
   MenuOutlined,
+  FundOutlined,
 } from "@ant-design/icons";
+import icon from "../images/cryptocurrency.png";
 
 const Navbar = () => {
-  return <div></div>;
+  return (
+    <div className="nav-container">
+      <div className="logo-container">
+        <Avatar src={icon} size="large" />
+        <Typography.Title level={2} className="logo">
+          <Link to="/">CryptoWorld</Link>
+        </Typography.Title>
+      </div>
+      <Menu theme="dark">
+        <Menu.Item icon={<HomeOutlined />}>
+          <Link to="/">Home</Link>
+        </Menu.Item>
+        <Menu.Item icon={<FundOutlined />}>
+          <Link to="/cryptocurrencies">CryptoCurrencies</Link>
+        </Menu.Item>
+        <Menu.Item icon={<MoneyCollectOutlined />}>
+          <Link to="/exchanges">Exchanges</Link>
+        </Menu.Item>
+        <Menu.Item icon={<HomeOutlined />}>
+          <Link to="/news">News</Link>
+        </Menu.Item>
+      </Menu>
+      {/* <Button className="menu-control-container"></Button> */}
+    </div>
+  );
 };
 
 export default Navbar;
